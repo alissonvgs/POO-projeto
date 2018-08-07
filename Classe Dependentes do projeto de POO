@@ -1,0 +1,53 @@
+package academia.ufpb.br;
+
+
+public class Dependentes extends Pessoa{
+	private Cliente responsavel; //Responsavel do dependente
+	private Cliente dependente; // Depentende
+	private Cliente [] listaResponsavel = new Cliente [2]; //Array de 2 Clientes
+
+	
+	public Dependentes(Cliente responsavel, Cliente dependente) {
+		this.responsavel = responsavel;
+		this.dependente = dependente;
+	}
+	
+	
+	
+	public void setResponsavel(Cliente responsavel) {
+		this.responsavel = responsavel;
+	}
+	public Cliente getResponsavel() {
+		return this.responsavel;
+	}
+	
+	
+	
+	public Cliente getdependente() {
+		return dependente;
+	}
+	public void setdependente(Cliente dependente) {
+		this.dependente = dependente;
+	}
+	
+	
+	public Cliente [] getListaResponsavel() {
+		return listaResponsavel;
+	}
+	public void setListaResponsavel(Cliente [] listaResponsavel) {
+		this.listaResponsavel = listaResponsavel;
+	}
+	
+	
+
+
+	public void cadastraResponsavel(Cliente responsavel, Cliente dependente) { // Metodo para adicionar o dependente e o responsavel em um array
+		listaResponsavel[1] = dependente;
+		for (int k = 0; k < listaResponsavel.length; k++) {
+			if(listaResponsavel[k] == null) {
+				listaResponsavel[k] = responsavel; 
+			}
+		}
+	}
+		
+}
